@@ -15,4 +15,15 @@
 {% empty %}
 <p> No results found.</p>
 {% endfor %}
+{% if is_paginated %}
+<nav>
+  <ul class="pager">
+      {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a><li>
+      {% endif %}
+    <li><a href="?page= {{ page_obj.previous_page_number }}">Next</a></li>
+  </ul>
+</nav>
+{% endif %}
+
 {% endblock %}
